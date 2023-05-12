@@ -1,0 +1,15 @@
+h1 {
+    font-size: 60px;
+}
+
+#currentStateOfPlay {
+    margin-top: 2em;
+}
+
+#lostAlertBox {
+    margin-top: 2em;
+}
+
+#scoreboardRow {
+    margin-top: 2em;
+}

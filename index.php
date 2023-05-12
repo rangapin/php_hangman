@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 
 if(!isset($_SESSION['word'])){
     $words = file("words.txt");
