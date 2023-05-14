@@ -10,6 +10,9 @@ session_start();
     <title>Hangman</title>
     <link rel="stylesheet" href="bootstrap.min-flatly.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+        <?php include "hangman.js"; ?>
+    </script>
 </head>
 <body>
 <div class="container">
