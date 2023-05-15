@@ -1,4 +1,4 @@
-<form class="row g-3" method="post" action="">
+<form class="row g-3 justify-content-center mt-3" method="post" action="">
     <div class="col-auto">
         <select class="form-select" name="guess">
             <?php

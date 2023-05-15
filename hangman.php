@@ -1,8 +1,10 @@
 <?php 
 
+include "functions.php";
+
 include "header.php";
 
-include "functions.php";
+resetScoreboard();
 
 setUpGame();
 
@@ -24,7 +26,8 @@ if($_SESSION['lives'] <= 0){
     youWon();
 }
 
-if($_SESSION['lives'] !=0 && $_SESSION['lettersLeftToGuess'] !=0){
+if($_SESSION['lives'] !=0 && $_SESSION['lettersLeftToGuess'] !=0)
+{
 include "form.php";
 }
 include "scoreboard.php";
