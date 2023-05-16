@@ -11,6 +11,31 @@ function resetScoreboard() {
     }
 }
 
+function getRating() {
+    $correctGuesses = $_SESSION['correctGuesses'];
+    $incorrectGuesses = $_SESSION['incorrectGuesses'];
+    $totalGuesses = $correctGuesses + $incorrectGuesses;
+    $rating = $correctGuesses / $totalGuesses;
+    $grade = [
+        [0.8, "A", "success"],
+        [0.6, "B", "info"],
+        [0.4, "C", "warning"],
+        [0.2, "D", "danger"],
+        [0, "E", "danger"]
+    ];
+    if($totalGuesses > 0){
+        for($i = 0; $i < 5; $i++){
+            if($rating >= $grade[$i][0]){
+                return $grade = [$grade[$i][1], $grade[$i][2]];
+            }
+        }
+    } else {
+        return $grade = ["N/A", "secondary"];
+    }
+}
+
+
+
 function setUpGame() {
     if(!isset($_SESSION['word'])){
         $words = file("words.txt");

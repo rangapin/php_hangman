@@ -30,5 +30,8 @@ if($_SESSION['lives'] !=0 && $_SESSION['lettersLeftToGuess'] !=0)
 {
 include "form.php";
 }
+$returnedArray = getRating();
+$returnedGrade = $returnedArray[0];
+$returnedColor = $returnedArray[1];
 include "scoreboard.php";
 include "footer.php";

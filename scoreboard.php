@@ -11,10 +11,14 @@
             <li class="list-group-item d-flex justify-content-between">Games Lost<span class="badge bg-primary"><?php echo $_SESSION['gamesLost'] ?></span></li>
             <li class="list-group-item d-flex justify-content-between">Total Games Played<span class="badge bg-primary"><?php echo $_SESSION['gamesWon'] + $_SESSION['gamesLost'] ?></span></li>
             <li class="list-group-item d-flex justify-content-between">
-                <form method="post" action="hangman.php">
-                    <button class="btn btn-danger" name="reset">RESET SCOREBOARD</button>
-                </form>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#resetConfirmModal">RESET SCOREBOARD</button>
+                <button class="btn btn-outline-<?php echo $returnedColor; ?>"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Your rating is based on your percentage of correct guesses."                
+                >RATING: <?php echo $returnedGrade; ?></button>
             </li>
         </ul>
     </div>
 </div>
+<?php include "resetModal.php" ?>
