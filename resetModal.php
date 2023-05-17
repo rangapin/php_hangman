@@ -11,7 +11,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">CANCEL</button>
-                <form method="post" action="hangman.php">
+                <form method="post" action="functions.php">
                     <button class="btn btn-danger" name="reset">RESET SCOREBOARD</button>
                 </form>
             </div>

@@ -2,13 +2,20 @@
 
 session_start();
 
+if(isset($_POST['guess'])){
+    dealWithGuess();
+}
+
+if (isset($_POST['reset'])) {
+    resetScoreboard();
+}
+
 function resetScoreboard() {
-    if(isset($_POST['reset'])){
         $_SESSION['correctGuesses'] = 0;
         $_SESSION['incorrectGuesses'] = 0;
         $_SESSION['gamesWon'] = 0;
         $_SESSION['gamesLost'] = 0;
-    }
+        header("Location: hangman.php");
 }
 
 function getRating() {

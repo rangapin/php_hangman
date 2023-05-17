@@ -17,3 +17,8 @@ h1 {
 #canvas {
     border: 1px solid black;
 }
+
+.alphabetButton {
+    width: 3em;
+    margin: 0.5em;
+}

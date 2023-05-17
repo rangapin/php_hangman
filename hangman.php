@@ -4,13 +4,7 @@ include "functions.php";
 
 include "header.php";
 
-resetScoreboard();
-
 setUpGame();
-
-dealWithGuess();
-
-$remainingLetters = remainingLetters();
 
 if($_SESSION['lives'] <= 0){
     
