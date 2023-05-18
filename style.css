@@ -22,3 +22,7 @@ h1 {
     width: 3em;
     margin: 0.5em;
 }
+
+#box {
+    display: none;
+}

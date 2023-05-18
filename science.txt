@@ -1,0 +1,6 @@
+force
+magnetism
+cohesion
+liquid
+chemical
+reaction

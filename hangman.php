@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include "functions.php";
 
@@ -6,12 +6,13 @@ include "header.php";
 
 setUpGame();
 
-if($_SESSION['lives'] <= 0){
-    
+include ("categorySelection.php");
+
+if ($_SESSION['lives'] <= 0) {
+
     include "youLost.php";
 
     youLost();
-
 } else {
     $currentStateOfPlay = currentStateOfPlay();
 
@@ -20,9 +21,8 @@ if($_SESSION['lives'] <= 0){
     youWon();
 }
 
-if($_SESSION['lives'] !=0 && $_SESSION['lettersLeftToGuess'] !=0)
-{
-include "form.php";
+if ($_SESSION['lives'] != 0 && $_SESSION['lettersLeftToGuess'] != 0) {
+    include "form.php";
 }
 $returnedArray = getRating();
 $returnedGrade = $returnedArray[0];

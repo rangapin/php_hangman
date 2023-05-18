@@ -10,6 +10,22 @@ if (isset($_POST['reset'])) {
     resetScoreboard();
 }
 
+if(isset($_POST['selectCategory'])){
+    $category = $_POST['wordListCategory'];
+    $_SESSION['category'] = $category;
+    unset($_SESSION['word']);
+    header("Location: hangman.php");
+}
+
+function getCategory(){
+    if(!isset($_SESSION['category'])){
+        $category = $_SESSION['category'] = "";
+    } else {
+        $category = $_SESSION['category'];
+    }
+    return $category;
+}
+
 function resetScoreboard() {
         $_SESSION['correctGuesses'] = 0;
         $_SESSION['incorrectGuesses'] = 0;
@@ -41,11 +57,32 @@ function getRating() {
     }
 }
 
-
+function setCategoryIcon($icon){
+    $_SESSION['icon'] = $icon;
+    return;
+}
 
 function setUpGame() {
+    $category = getCategory();
+    switch($category){
+        case "fruits":
+            $words = file("fruits.txt");
+            setCategoryIcon("fa-apple-alt");
+            break;
+        case "vegetables":
+            $words = file("vegetables.txt");
+            setCategoryIcon("fa-carrot");
+            break;
+        case "science":
+            $words = file("science.txt");
+            setCategoryIcon("fa-flask");
+            break; 
+        default:
+            $words = file("fruits.txt");
+            setCategoryIcon("fa-apple-alt");
+    }
     if(!isset($_SESSION['word'])){
-        $words = file("words.txt");
+        //$words = file("words.txt");
         $word = rtrim(strtoupper($words[array_rand($words)]));
         $_SESSION['word'] = $word;
         $_SESSION['guesses'] = [];

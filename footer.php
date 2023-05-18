@@ -27,6 +27,14 @@
         });
     });
 </script>
+<script>
+    $(function(){
+        $("#box").hide();
+        $(".fa-2x").click(function(){
+            $("#box").slideToggle();
+        });
+    });
+</script>
 </body>
 
 </html>
